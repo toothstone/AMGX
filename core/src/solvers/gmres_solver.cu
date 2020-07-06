@@ -399,7 +399,7 @@ GMRES_Solver<T_Config>::solve_iteration( VVector &b, VVector &x, bool xIsZero )
         {
             m_V_vectors[0].delayed_send = 1;
             m_Z_vector.delayed_send = 1;
-            m_preconditioner->solve( m_V_vectors[0], m_Z_vector, true );
+            m_preconditioner->solve( m_Z_vector, m_V_vectors[0], true );
             m_V_vectors[0].delayed_send = 1;
             m_Z_vector.delayed_send = 1;
         }
